@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "../loading";
 
 // 假設mockFetch是一個3秒後回傳API結果的function
 
@@ -10,10 +11,6 @@ type List = {
 export default function Menu() {
   const [menuList, setMenuList] = useState<List[]>([]);
 
-  if (menuList === []) {
-    return null;
-  }
-
   useEffect(() => {
     async function fetchData() {
       const data = await mockFetch();
@@ -22,14 +19,18 @@ export default function Menu() {
     fetchData();
   }, []);
 
+  if (menuList.length === 0) {
+    return <Loading />;
+  }
+
   return (
-    <div className="px-4">
-      {menuList.map((item) => (
-        <ul key={item.id}>
-          <li className="list-disc">{item.name}</li>
-        </ul>
-      ))}
-    </div>
+      <div className="px-4">
+        {menuList.map((item) => (
+          <ul key={item.id}>
+            <li className="list-disc">{item.name}</li>
+          </ul>
+        ))}
+      </div>
   );
 }
 
