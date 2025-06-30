@@ -24,8 +24,9 @@ export default function TodoList() {
   const [list, setList] = useState(todo);
 
   function handleClick(index: number) {
-    list[index].isCompleted = !list[index].isCompleted;
-    setList(list);
+    const newList = [...list];
+    newList[index].isCompleted = !newList[index].isCompleted;
+    setList(newList);
   }
 
   return (
