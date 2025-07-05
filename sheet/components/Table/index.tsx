@@ -1,11 +1,11 @@
 "use client";
 
-import { ClientData } from "../../constants/types";
+import { AccountData } from "@/app/api/mock";
 import TableHeader from "./tableHeader";
 import Row from "./Row";
 
 interface TableProps {
-  data: ClientData[];
+  data: AccountData[];
   checkedItems: Record<string, boolean>;
   setCheckedItems: (checkedItems: Record<string, boolean>) => void;
 }
@@ -22,7 +22,7 @@ const Table = ({ data, checkedItems, setCheckedItems }: TableProps) => {
     setCheckedItems(newCheckedItems);
   };
 
-  const onChecked = (id: string) => {
+  const onChecked = (id: number) => {
     const newCheckedItems = {
       ...checkedItems,
       [id]: !checkedItems[id],

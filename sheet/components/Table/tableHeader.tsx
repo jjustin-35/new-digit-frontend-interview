@@ -12,8 +12,8 @@ const TableHeader = ({
 }) => {
   return (
     <thead>
-      <tr className="ml-2 py-4">
-        <th className="w-[42px] flex items-center justify-center">
+      <tr className="pl-2 py-4">
+        <th className="p-4 flex items-center justify-center">
           <Checkbox isChecked={isAllChecked} onChange={onAllChecked} />
         </th>
         {columns.map((column) => (

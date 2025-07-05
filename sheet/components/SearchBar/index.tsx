@@ -8,7 +8,7 @@ const SearchBar = ({
   onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   return (
-    <div className="flex justify-end gap-2">
+    <div className="flex justify-end gap-2 p-5">
       <input type="text" placeholder="Search" onChange={onSearch} />
       <button className="px-2 py-1 bg-red-500 text-white" onClick={onDelete}>
         Delete

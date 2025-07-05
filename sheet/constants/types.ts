@@ -1,6 +1,6 @@
 export enum ClientDataKey {
   ID = "id",
-  CLIENT = "client",
+  CLIENT = "name",
   TOTAL_BALANCE = "totalBalance",
   ISSUE_DATE = "issueDate",
   BALANCE = "balance",
