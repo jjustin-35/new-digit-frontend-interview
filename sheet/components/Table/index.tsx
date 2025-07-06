@@ -30,7 +30,8 @@ const Table = ({ data, checkedItems, setCheckedItems }: TableProps) => {
     setCheckedItems(newCheckedItems);
   };
 
-  const isAllChecked = Object.values(checkedItems).every(Boolean);
+  const checkedItemsValues = Object.values(checkedItems);
+  const isAllChecked = checkedItemsValues?.length > 0 && checkedItemsValues.every(Boolean);
 
   return (
     <div className="w-full overflow-x-auto">

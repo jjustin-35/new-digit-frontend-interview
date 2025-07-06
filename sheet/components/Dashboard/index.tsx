@@ -22,8 +22,12 @@ const Dashboard = () => {
     page: number;
     pageSize: number;
   }) => {
-    const resp = await mockFetch({ page, pageSize });
-    setData(resp);
+    try {
+      const resp = await mockFetch({ page, pageSize });
+      setData(resp);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   const onDelete = () => {

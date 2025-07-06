@@ -12,7 +12,7 @@ const Checkbox = ({
   return (
     <input
       type="checkbox"
-      className="block w-5 h-5"
+      className="block w-4 h-4"
       checked={isChecked}
       onChange={onChange}
     />
